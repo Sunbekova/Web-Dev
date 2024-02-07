@@ -1,0 +1,133 @@
+body{
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+.main{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    min-height: auto;
+}
+
+.form-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-div form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 3h 2vw;
+    border: 1px solid #737373;
+}
+
+.form-div form .inst-logo{
+    width: 200px;
+    margin: 20px 0;
+
+}
+
+.input{
+    width: 90%;
+    padding:  .6rem;
+    border-radius: 8px;
+    border: 1px solid #737373;
+    margin: 3px;
+}
+
+.login-btn{
+    width: 95%;
+    padding: 15px;
+    font-weight: 700;
+    background-color: rgb(1, 183, 255);
+    border: none;
+    border-radius: 8px;
+    margin: 8px 0px;
+    color: white;
+}
+
+#or{ margin: 20px 0;}
+
+#or::before, #or::after{
+    content: '-------------------';
+    border: none;
+    margin: 0 10px;
+}
+
+.fb-login{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 95%;
+    color: rgb(85, 0, 255);
+    margin-bottom: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#f-psw{
+    font-size: small;
+    cursor: pointer;    
+}
+
+
+.sign-up{
+
+    text-align: center;
+    border: 1px solid #737373;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.sign-up a{
+    color: rgb(1, 183, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.get-app{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#play{
+    width: 150px;
+    cursor: pointer;
+}
+#micrsft{
+    width: 120px;
+    cursor: pointer;
+}
+
+.more{
+    margin: 40px;
+    text-align: center;
+    display: inline;
+    color: #737373;
+    font-size: small;
+}
+
+ul li{
+    margin-top: auto;
+    display: inline;
+    list-style-type: none;
+}
+
+ul li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+select{
+    text-decoration: none;
+    color: #737373;
+    border: none;
+    
+}
