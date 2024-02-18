@@ -7,10 +7,16 @@
 
   </head>
   <body>
+    <div id="upLine">
+      <h3>ToDO List</h3>
+    </div>
+    <div class="main">
     <div id="blockh" class="header">
-    <h2>To-Do List</h2>
-    <input type="text" id="myInput" placeholder="Type in here">
-    <span onclick="newElement()" class="addButt">Add</span>
+      <h2>To-Do List</h2>
+      <div id="adding">
+        <input type="text" id="myInput" placeholder="New Task">
+        <span onclick="newElement()" class="addButt">Add</span>
+      </div>
     </div>
           
     <ul id="tasks">
@@ -21,6 +27,8 @@
     </ul>
 
     <script src="lab3Script.js"></script>
+
+    </div>
 
   </body>
 </html>
