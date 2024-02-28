@@ -1,0 +1,85 @@
+<div class="search-bar">
+  <label for="search">Search by Product Name:</label>
+  <input
+    type="text"
+    id="search"
+    [(ngModel)]="searchInput"
+  />
+</div>
+
+<div class="product-container">
+  <div
+    *ngFor="let product of filteredProducts"
+    class="product-card"
+  >
+    <div *ngFor="let image of product.img; let i = index">
+      <img
+        [src]="image"
+        [alt]="product.name"
+        *ngIf="i === product.currentImageIndex"
+      />
+    </div>
+    <div class="button-row">
+      <button
+        type="button"
+        class="image-buttons"
+        (click)="prevImage(product)"
+      >
+        <img
+          src="../../assets/prev.svg"
+          alt="prev"
+        />
+      </button>
+      <button
+        type="button"
+        class="image-buttons"
+        (click)="nextImage(product)"
+      >
+        <img
+          src="../../assets/next.svg"
+          alt="next"
+        />
+      </button>
+    </div>
+    <h3>
+      <a
+        [title]="product.name + ' details'"
+        [href]="product.link"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ product.name }}
+      </a>
+    </h3>
+    <p *ngIf="product.description">
+      <span>Description: </span>{{ product.description }}
+    </p>
+    <p
+      *ngIf="product.price"
+      class="price"
+    >
+      <span>{{ product.price }} </span> ₸
+    </p>
+    <ngb-rating
+      [max]="5"
+      [(rate)]="product.rating"
+      [readonly]="true"
+    ></ngb-rating>
+    <div class="button-container button-row">
+      <button
+        class="btn__shares"
+        type="button"
+        (click)="share(product.name, product.link)"
+      >
+        WhatsApp
+      </button>
+      <button
+        class="btn__shares"
+        type="button"
+        (click)="sharetg(product.name, product.link)"
+      >
+        Telegram
+      </button>
+    </div>
+  </div>
+</div>

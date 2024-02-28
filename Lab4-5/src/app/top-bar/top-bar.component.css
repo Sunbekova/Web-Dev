@@ -1,0 +1,21 @@
+.main{
+    display: block;
+    width: max-content;
+}
+
+.categories{
+    display: flex;
+    width: 960px;
+    justify-content: center;
+    text-align: center;
+    background-color: aliceblue;
+    color: black;
+    font-weight: bold;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/
