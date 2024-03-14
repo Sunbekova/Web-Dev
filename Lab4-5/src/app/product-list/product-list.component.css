@@ -36,7 +36,7 @@
 }
 
 .product-card button {
-  width: 80px;
+  width: 150px;
   background-color: #007bff;
   color: #fff;
   padding: 10px 20px;
@@ -102,10 +102,6 @@ span {
   justify-content: space-between;
 }
 
-.btn__shares {
-  display: flex;
-  justify-content: center;
-}
 .search-bar {
   margin-top: 20px;
   display: flex;
@@ -120,4 +116,13 @@ span {
   font-size: 15px;
   margin-right: 1rem;
   margin-top: 0.5rem;
+}
+
+.deletebtn {
+  background-color: red !important;
+}
+
+.likebtn {
+  margin-top: 1rem;
+  background-color: green !important;
 }

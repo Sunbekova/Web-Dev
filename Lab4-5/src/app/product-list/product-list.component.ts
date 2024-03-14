@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 import { Product, products } from '../products';
 
 @Component({
@@ -6,9 +7,29 @@ import { Product, products } from '../products';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent {
+export class ProductListComponent implements OnInit {
   products: Product[] = products;
   searchInput: string = '';
+
+  constructor(
+    private route: ActivatedRoute,
+  ) {}
+  ngOnInit() {
+
+    this.route.paramMap.subscribe(params => {
+      const categoryIdFromRoute = Number(params.get('categoryId'));
+      this.filterProducts(categoryIdFromRoute);
+    });
+  }
+  
+  private filterProducts(categoryId: number) {
+    if (categoryId) {
+      this.products = products.filter(product => product.categoryId === categoryId);
+    } else {
+      // If no categoryId is specified, display all products
+      this.products = products;
+    }
+  }
 
   get filteredProducts(): Product[] {
     const searchTerm = this.searchInput.toLowerCase();
@@ -32,11 +53,26 @@ export class ProductListComponent {
       product.currentImageIndex = (product.currentImageIndex + 1) % product.img.length;
     }
   }
-
+  like(product: Product) {
+    product.likes++;
+  }
   prevImage(product: Product) {
     if (product.img.length > 1) {
       product.currentImageIndex =
         (product.currentImageIndex - 1 + product.img.length) % product.img.length;
+    }
+  }
+  onNotify() {
+    window.alert('You will be notified when the product goes on sale');
+  }
+  delete(product: Product) {
+    const index = this.products.indexOf(product);
+  
+    if (index !== -1) {
+      this.products.splice(index, 1);
+      window.alert('Product has been deleted');
+    } else {
+      window.alert('Product not found');
     }
   }
 }
