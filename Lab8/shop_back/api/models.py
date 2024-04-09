@@ -13,7 +13,12 @@ class Category(models.Model):
         }
 
     def __str__(self):
-        return self.title
+        return f"ID: {self.id}, name: {self.name}" 
+
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
     
 
 
@@ -39,8 +44,7 @@ class Product(models.Model):
         }
     
     def __str__(self):
-        return self.title
+        return f"id: {self.id}, name: {self.name}, price: {self.price}"
     
     class Meta:
-        verbose_name = 'Single'
-        verbose_name_plural = 'Plural'
+        pass
